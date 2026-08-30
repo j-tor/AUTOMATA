@@ -4,8 +4,6 @@
 class LinkedList {
 public:
     LinkedList();
-    LinkedList(const LinkedList& otro);
-    LinkedList& operator=(const LinkedList& otro);
     ~LinkedList();
 
     void agregarAlFinal(int valor);
@@ -22,6 +20,6 @@ private:
         Nodo(int v) : valor(v), siguiente(nullptr) {}
     };
 
-    Nodo* cabeza;
+    Nodo* head;
     size_t longitud;
 };
