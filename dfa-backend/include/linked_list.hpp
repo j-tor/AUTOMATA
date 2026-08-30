@@ -1,11 +1,11 @@
-//header linked list 
 #pragma once
-
 #include <cstddef>
 
 class LinkedList {
 public:
     LinkedList();
+    LinkedList(const LinkedList& otro);
+    LinkedList& operator=(const LinkedList& otro);
     ~LinkedList();
 
     void agregarAlFinal(int valor);
@@ -22,6 +22,6 @@ private:
         Nodo(int v) : valor(v), siguiente(nullptr) {}
     };
 
-    Nodo* cabeza_;
-    size_t tamano_;
+    Nodo* cabeza;
+    size_t longitud;
 };

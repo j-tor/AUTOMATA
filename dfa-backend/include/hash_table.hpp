@@ -1,12 +1,12 @@
-//header hash table 
 #pragma once
-
 #include <cstddef>
 #include <string>
 
 class HashTable {
 public:
     HashTable();
+    HashTable(const HashTable& otro);
+    HashTable& operator=(const HashTable& otro);
     ~HashTable();
 
     void insertar(const std::string& clave, int valor);
@@ -25,9 +25,9 @@ private:
             : clave(c), valor(v), siguiente(nullptr) {}
     };
 
-    Entrada** baldes_;
-    size_t cantidadBaldes_;
-    size_t tamano_;
+    static const size_t CANTIDAD_BALDES = 53;
+    Entrada* baldes[CANTIDAD_BALDES];
+    size_t longitud;
 
     size_t hash(const std::string& clave) const;
 };

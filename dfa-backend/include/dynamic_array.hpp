@@ -1,6 +1,4 @@
-//header dynamic array
 #pragma once
-
 #include <cstddef>
 
 class DynamicArray {
@@ -17,9 +15,7 @@ public:
     void limpiar();
 
 private:
-    int* datos_;
-    size_t tamano_;
-    size_t capacidad_;
-
-    void redimensionar(size_t nuevaCapacidad);
+    static const size_t capacidadMaxima = 10000;
+    int datos[capacidadMaxima];
+    size_t longitud;
 };

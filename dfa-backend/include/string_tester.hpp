@@ -1,8 +1,5 @@
-//header cadena tester 
 #pragma once
-
 #include "dfa_model.hpp"
-
 #include <string>
 
 struct ResultadoPrueba {
