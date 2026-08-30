@@ -32,9 +32,9 @@ public:
 private:
     std::string nombre_;
     HashTable nombresEstados_;   // nombre -> id
-    DynamicArray estados_;       // ids de estados
+    DynamicArray estados_;       // ids 
     std::string alfabeto_;       // símbolos
-    Graph transiciones_;         // grafo de transiciones (id, simbolo) -> id
+    Graph transiciones_;         // grafo de transiciones id
     int estadoInicial_;
     DynamicArray estadosAceptacion_;
 };
