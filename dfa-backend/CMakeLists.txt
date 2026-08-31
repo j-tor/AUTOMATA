@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include_directories(include)
 
-# Archivos fuente principales
+# Archivos fuente principales (recursivo para detectar src/coneccion)
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # Ejecutable principal
