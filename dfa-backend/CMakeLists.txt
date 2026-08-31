@@ -11,6 +11,3 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # Ejecutable principal
 add_executable(dfa_backend main.cpp ${SOURCES})
-
-# Habilitar soporte de pruebas
-enable_testing()

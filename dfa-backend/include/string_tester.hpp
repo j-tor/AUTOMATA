@@ -5,6 +5,7 @@
 struct ResultadoPrueba {
     bool aceptada;
     std::string traza;
+    DynamicArray ruta; 
 };
 
 class StringTester {

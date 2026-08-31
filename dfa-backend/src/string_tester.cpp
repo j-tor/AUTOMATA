@@ -19,6 +19,7 @@ ResultadoPrueba StringTester::evaluarCadena(const DFAModel& dfa, const std::stri
     
     std::ostringstream traza;
     traza << "Estado inicial: " << estadoActual << "\n";
+    resultado.ruta.agregarAlFinal(estadoActual);
     
     const Graph& transiciones = dfa.obtenerTransiciones();
     const DynamicArray& estadosAceptacion = dfa.obtenerEstadosAceptacion();
@@ -38,6 +39,7 @@ ResultadoPrueba StringTester::evaluarCadena(const DFAModel& dfa, const std::stri
         
         traza << "Simbolo '" << simbolo << "' -> Estado " << proximoEstado << "\n";
         estadoActual = proximoEstado;
+        resultado.ruta.agregarAlFinal(estadoActual);
     }
     
     bool esAceptacion = false;
