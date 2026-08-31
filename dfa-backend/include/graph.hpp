@@ -32,7 +32,7 @@ private:
             : idNodo(id), aristas(nullptr), siguiente(nullptr) {}
     };
 
-    ListaAdyacencia* cabeza_;
+    ListaAdyacencia* head;
     size_t cantidadNodos_;
     size_t cantidadAristas_;
 };
