@@ -18,11 +18,11 @@ public:
     void asignarEstadoInicial(const std::string& nombreEstado);
     void agregarEstadoAceptacion(const std::string& nombreEstado);
 
-    DynamicArray obtenerEstados() const;
-    std::string obtenerAlfabeto() const;
-    Graph obtenerTransiciones() const;
+    const DynamicArray& obtenerEstados() const;
+    const std::string& obtenerAlfabeto() const;
+    const Graph& obtenerTransiciones() const;
     int obtenerEstadoInicial() const;
-    DynamicArray obtenerEstadosAceptacion() const;
+    const DynamicArray& obtenerEstadosAceptacion() const;
 
     int obtenerIdEstado(const std::string& nombreEstado) const;
 

@@ -1,35 +1,41 @@
 #include "dfa_service.hpp"
 
-DFAService::DFAService() {
-}
+DFAService::DFAService() {}
 
-DFAService::~DFAService() {
-}
+DFAService::~DFAService() {}
 
 DFAModel DFAService::crearDFA(const std::string& definicion) {
-    return {};
+    DFAModel dfa;
+    dfa.asignarNombre("DFA_" + definicion);
+    return dfa;
 }
 
 DFAModel DFAService::obtenerDFA(int id) {
-    return {};
+    (void)id;
+    DFAModel dfa;
+    return dfa;
 }
 
 DynamicArray DFAService::listarDFAs() {
-    return {};
+    DynamicArray lista;
+    return lista;
 }
 
 bool DFAService::eliminarDFA(int id) {
+    (void)id;
     return false;
 }
 
 ResultadoValidacion DFAService::validarDFA(const DFAModel& dfa) {
-    return {};
+    return Validator::validar(dfa);
 }
 
 DFAModel DFAService::realizarUnion(const DFAModel& a, const DFAModel& b) {
-    return {};
+    DFAUnion unionador;
+    return unionador.unir(a, b);
 }
 
 ResultadoPrueba DFAService::probarCadenaDFA(const DFAModel& dfa, const std::string& entrada) {
-    return {};
+    StringTester tester;
+    return tester.evaluarCadena(dfa, entrada);
 }

@@ -1,6 +1,6 @@
 #include "linked_list.hpp"
 
-LinkedList::LinkedList() : head(nullptr), tamano(0) {}
+LinkedList::LinkedList() : head(nullptr), longitud(0) {}
 
 LinkedList::~LinkedList() {
     limpiar();
@@ -8,13 +8,15 @@ LinkedList::~LinkedList() {
 
 void LinkedList::agregarAlFinal(int valor) {
     Nodo* nuevoNodo = new Nodo(valor);
-    if (head == nullptr) {
+    if (head == nullptr) 
+    {
         head = nuevoNodo;
-        tamano++;
+        longitud++;
         return;
     }
     Nodo* actual = head;
-    while (actual->siguiente != nullptr) {
+    while (actual->siguiente != nullptr) 
+    {
         actual = actual->siguiente;
     }
     actual->siguiente = nuevoNodo;
@@ -23,17 +25,16 @@ void LinkedList::agregarAlFinal(int valor) {
 
 void LinkedList::agregarAlInicio(int valor) {
     Nodo* nuevoNodo = new Nodo(valor);
-    nuevoNodo->siguiente =head;
+    nuevoNodo->siguiente = head;
     head = nuevoNodo;
     longitud++;
 }
 
 bool LinkedList::remover(int valor) {
     if (head == nullptr) return false;
-    if (head->valor == valor) 
-    {
-        Nodo* temp =head;
-        head= head->siguiente;
+    if (head->valor == valor) {
+        Nodo* temp = head;
+        head = head->siguiente;
         delete temp;
         longitud--;
         return true;
@@ -48,30 +49,31 @@ bool LinkedList::remover(int valor) {
             longitud--;
             return true;
         }
-        anterior= actual;
-        actual= actual->siguiente;
+        anterior = actual;
+        actual = actual->siguiente;
     }
     return false;
 }
 
-bool LinkedList::contiene(int valor) const{
+bool LinkedList::contiene(int valor) const {
     Nodo* actual = head;
-    while (actual != nullptr) {
+    while (actual != nullptr) 
+    {
         if (actual->valor == valor) return true;
-        actual= actual->siguiente;
+        actual = actual->siguiente;
     }
     return false;
 }
 
-size_t LinkedList::tamano() const{
+size_t LinkedList::tamano() const {
     return longitud;
 }
 
 void LinkedList::limpiar() {
-    while (head != nullptr) 
+    while (head !=nullptr) 
     {
         Nodo* temp = head;
-        head = head->siguiente;
+        head =head->siguiente;
         delete temp;
     }
     longitud = 0;
