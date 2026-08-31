@@ -5,8 +5,6 @@
 class HashTable {
 public:
     HashTable();
-    HashTable(const HashTable& otro);
-    HashTable& operator=(const HashTable& otro);
     ~HashTable();
 
     void insertar(const std::string& clave, int valor);
@@ -25,8 +23,8 @@ private:
             : clave(c), valor(v), siguiente(nullptr) {}
     };
 
-    static const size_t CANTIDAD_BALDES = 53;
-    Entrada* baldes[CANTIDAD_BALDES];
+    static const size_t capacidadTabla = 53;
+    Entrada* tabla[capacidadTabla];
     size_t longitud;
 
     size_t hash(const std::string& clave) const;
